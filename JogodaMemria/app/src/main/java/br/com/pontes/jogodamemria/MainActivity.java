@@ -1,14 +1,10 @@
 package br.com.pontes.jogodamemria;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -16,9 +12,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton[] figurinhas = new ImageButton[24];
     private Carta[] botoes = new Carta[24];
     private List<Integer> cartasMostradas = new ArrayList<Integer>();
-    TextView tv_tst;
+    TextView tv_jogador1;
+    TextView tv_jogador2;
+    TextView tv_pts1;
+    TextView tv_pts2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +43,15 @@ public class MainActivity extends AppCompatActivity {
     public void desvirarCarta(){
         figurinhas[cartasMostradas.get(0)].setImageResource(botoes[cartasMostradas.get(0)].getFace1());
         figurinhas[cartasMostradas.get(1)].setImageResource(botoes[cartasMostradas.get(1)].getFace1());
-        checaIgualdade(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)]);
         cartasMostradas.clear();
     }
 
-    public void checaIgualdade(Carta c1, Carta c2){
+    public boolean saoIguais(Carta c1, Carta c2){
         if(c1.getFace2() == c2 .getFace2()){
-            tv_tst.setText("friewfb");
+            tv_pts1.setText((Integer.parseInt(tv_pts1.getText().toString())+1)+"");
+            return true;
         }
+        return false;
     }
 
     public void virarCartas() {
@@ -66,15 +63,17 @@ public class MainActivity extends AppCompatActivity {
                     figurinhas[finalI].setImageResource(botoes[finalI].getFace2());
                     cartasMostradas.add(finalI);
                    if(cartasMostradas.size()==2){
-                       Toast toast = Toast.makeText(getApplicationContext(), "Virar: Cartas viradas: " + cartasMostradas.size() +"\n", Toast.LENGTH_LONG);
-                       toast.show();
-                       final Handler handler = new Handler(Looper.getMainLooper());
-                       handler.postDelayed(new Runnable() {
-                           @Override
-                           public void run() {
-                               desvirarCarta();
-                           }
-                       }, 3000);
+                       Toast toast = Toast.makeText(getApplicationContext(), "Virar: Cartas viradas: " + cartasMostradas.size() +"\n", Toast.LENGTH_LONG); toast.show();
+
+                       if(!saoIguais(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)])){
+                           final Handler handler = new Handler(Looper.getMainLooper());
+                           handler.postDelayed(new Runnable() {
+                               @Override
+                               public void run() {
+                                   desvirarCarta();
+                               }
+                           }, 3000);
+                       }
 
                    }
                 }
@@ -82,7 +81,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void concatenar(){
-        tv_tst = findViewById(R.id.tv_tst);
+        tv_jogador1 = findViewById(R.id.tv_jogador1);
+        tv_pts1 = findViewById(R.id.tv_pts1);
+        tv_jogador2 = findViewById(R.id.tv_jogador2);
+        tv_pts2 = findViewById(R.id.tv_pts2);
 
         this.figurinhas[0] = findViewById(R.id.figurinha0);
         this.figurinhas[1] = findViewById(R.id.figurinha1);

@@ -7,6 +7,56 @@
     android:layout_centerInParent="true"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_pts2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_jogador2"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toEndOf="@+id/tv"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha22" />
+
+    <TextView
+        android:id="@+id/tv_pts1"
+        android:layout_width="16dp"
+        android:layout_height="26dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toEndOf="@+id/tv_jogador1"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha21" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_jogador2"
+        app:layout_constraintStart_toEndOf="@+id/tv_jogador1"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha22" />
+
+    <TextView
+        android:id="@+id/tv_jogador2"
+        android:layout_width="88dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="30dp"
+        android:text="Jogador 2"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha23" />
+
     <ImageButton
         android:id="@+id/figurinha21"
         android:layout_width="69dp"
@@ -278,12 +328,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_tst"
+        android:id="@+id/tv_jogador1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginBottom="30dp"
-        android:text="TextView"
+        android:layout_marginStart="30dp"
+        android:text="Jogador 1"
+        android:textColor="#000000"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha20" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
