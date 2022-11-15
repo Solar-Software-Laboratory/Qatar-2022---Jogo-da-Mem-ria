@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton[] figurinhas = new ImageButton[24];
     private Carta[] botoes = new Carta[24];
     private List<Integer> cartasMostradas = new ArrayList<Integer>();
+    TextView tv_tst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
     public void desvirarCarta(){
         figurinhas[cartasMostradas.get(0)].setImageResource(botoes[cartasMostradas.get(0)].getFace1());
         figurinhas[cartasMostradas.get(1)].setImageResource(botoes[cartasMostradas.get(1)].getFace1());
-        if()
+        checaIgualdade(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)]);
         cartasMostradas.clear();
+    }
+
+    public void checaIgualdade(Carta c1, Carta c2){
+        if(c1.getFace2() == c2 .getFace2()){
+            tv_tst.setText("friewfb");
+        }
     }
 
     public void virarCartas() {
@@ -74,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void concatenar(){
+        tv_tst = findViewById(R.id.tv_tst);
+
         this.figurinhas[0] = findViewById(R.id.figurinha0);
         this.figurinhas[1] = findViewById(R.id.figurinha1);
         this.figurinhas[2] = findViewById(R.id.figurinha2);
