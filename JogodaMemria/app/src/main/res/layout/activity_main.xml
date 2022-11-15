@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/figurinha21"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha22"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha20"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha17" />
+
+    <ImageButton
+        android:id="@+id/figurinha22"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha23"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha21"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha18" />
+
+    <ImageButton
+        android:id="@+id/figurinha20"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha21"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha16" />
+
+    <ImageButton
+        android:id="@+id/figurinha23"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha22"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha19" />
+
+    <ImageButton
+        android:id="@+id/figurinha17"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha18"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha16"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha13" />
+
+    <ImageButton
+        android:id="@+id/figurinha16"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha12" />
+
+    <ImageButton
+        android:id="@+id/figurinha19"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha18"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha15" />
+
+    <ImageButton
+        android:id="@+id/figurinha18"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha19"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha17"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha14" />
+
+    <ImageButton
+        android:id="@+id/figurinha13"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha12"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha9" />
+
+    <ImageButton
+        android:id="@+id/figurinha14"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha13"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha10" />
+
+    <ImageButton
+        android:id="@+id/figurinha15"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha14"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha11" />
+
+    <ImageButton
+        android:id="@+id/figurinha12"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha8" />
+
+    <ImageButton
+        android:id="@+id/figurinha9"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha8"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha5" />
+
+    <ImageButton
+        android:id="@+id/figurinha10"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha9"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha6" />
+
+    <ImageButton
+        android:id="@+id/figurinha8"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha4" />
+
+    <ImageButton
+        android:id="@+id/figurinha11"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha10"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha7" />
+
+    <ImageButton
+        android:id="@+id/figurinha5"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha4"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha1" />
+
+    <ImageButton
+        android:id="@+id/figurinha4"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha0" />
+
+    <ImageButton
+        android:id="@+id/figurinha6"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha5"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha2" />
+
+    <ImageButton
+        android:id="@+id/figurinha7"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha6"
+        app:layout_constraintTop_toBottomOf="@+id/figurinha3" />
+
+    <ImageButton
+        android:id="@+id/figurinha3"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/figurinha0"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/figurinha1"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/figurinha2"
+        android:layout_width="69dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/figurinha3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/figurinha1"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
