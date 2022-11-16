@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_jogador2;
     TextView tv_pts1;
     TextView tv_pts2;
+    int jogador = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +47,14 @@ public class MainActivity extends AppCompatActivity {
         cartasMostradas.clear();
     }
 
-    public boolean saoIguais(Carta c1, Carta c2){
+    public boolean saoIguais(Carta c1, Carta c2, int j){
         if(c1.getFace2() == c2 .getFace2()){
-            tv_pts1.setText((Integer.parseInt(tv_pts1.getText().toString())+1)+"");
+            if(j == 1){
+                tv_pts1.setText((Integer.parseInt(tv_pts1.getText().toString())+1)+"");
+            }else {
+                tv_pts2.setText((Integer.parseInt(tv_pts2.getText().toString())+1)+"");
+            }
+            cartasMostradas.clear();
             return true;
         }
         return false;
@@ -63,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
                     figurinhas[finalI].setImageResource(botoes[finalI].getFace2());
                     cartasMostradas.add(finalI);
                    if(cartasMostradas.size()==2){
-                       Toast toast = Toast.makeText(getApplicationContext(), "Virar: Cartas viradas: " + cartasMostradas.size() +"\n", Toast.LENGTH_LONG); toast.show();
+                       jogador++;
+                       //Toast toast = Toast.makeText(getApplicationContext(), "Jgador " + jogador%2 +"\n", Toast.LENGTH_LONG); toast.show();
 
-                       if(!saoIguais(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)])){
+                       if(!saoIguais(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)], jogador%2)){
                            final Handler handler = new Handler(Looper.getMainLooper());
                            handler.postDelayed(new Runnable() {
                                @Override
