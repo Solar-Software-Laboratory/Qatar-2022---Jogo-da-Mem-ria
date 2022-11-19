@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,49 +25,44 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton[] figurinhas = new ImageButton[24];
     private List<ImageButton> botoesNaoAchados = new ArrayList<ImageButton>();
     private Carta[] botoes = new Carta[24];
-    private List<Integer> cartasMostradas = new ArrayList<Integer>();
+    private List<Integer> indiceTempCartasMostradas = new ArrayList<Integer>();
     private TextView tv_jogador1;
     private TextView tv_jogador2;
     private TextView tv_pts1;
     private TextView tv_pts2;
-    //private TextView tv_jogadorAtual;
-    private int jogador = 0;
+    private byte jogador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.concatenar();
-        //controle.popularlista();
-        //this.definirCartaBotoes();
         this.virarCartas();
+        this.desativaBotoes();
     }
 
-    public void desvirarCarta(){
-        figurinhas[cartasMostradas.get(0)].setImageResource(botoes[cartasMostradas.get(0)].getFace1());
-        figurinhas[cartasMostradas.get(1)].setImageResource(botoes[cartasMostradas.get(1)].getFace1());
-        ativaBotoesNaoAchados();
-        Toast toast = Toast.makeText(getApplicationContext(),"Vez de "+ (jogador%2==1 ? tv_jogador2.getText():tv_jogador1.getText()), Toast.LENGTH_LONG); toast.show();
-        cartasMostradas.clear();
+    public void desvirarCarta(int i1, int i2){
+        figurinhas[i1].setImageResource(botoes[i1].getFace1());
+        figurinhas[i2].setImageResource(botoes[i2].getFace1());
+        indiceTempCartasMostradas.clear();
     }
 
-    public boolean saoIguais(Carta c1, Carta c2, int j){
+    public void saoIguais(int i1, int i2, int j){
         //compara se são iguais
-        if((c1.getFace2() == c2 .getFace2()) ){
-            Toast toast = Toast.makeText(getApplicationContext(),"Vez de "+ (jogador%2==1 ? tv_jogador2.getText():tv_jogador1.getText()), Toast.LENGTH_LONG); toast.show();
-            botoesNaoAchados.remove(figurinhas[cartasMostradas.get(0)]);
-            botoesNaoAchados.remove(figurinhas[cartasMostradas.get(1)]);
+        if((botoes[i1].getFace2() == botoes[i2] .getFace2()) ){
+            botoesNaoAchados.remove(figurinhas[i1]);
+            botoesNaoAchados.remove(figurinhas[i2]);
+            indiceTempCartasMostradas.clear();
             ativaBotoesNaoAchados();
             if(j == 1){
-                figurinhas[cartasMostradas.get(0)].setColorFilter(getResources().getColor(R.color.green));
-                figurinhas[cartasMostradas.get(1)].setColorFilter(getResources().getColor(R.color.green));
+                figurinhas[i1].setColorFilter(getResources().getColor(R.color.green));
+                figurinhas[i2].setColorFilter(getResources().getColor(R.color.green));
                 tv_pts1.setText((Integer.parseInt(tv_pts1.getText().toString())+1)+"");
             }else {
+                figurinhas[i2].setColorFilter(getResources().getColor(R.color.yellow));
+                figurinhas[i1].setColorFilter(getResources().getColor(R.color.yellow));
                 tv_pts2.setText((Integer.parseInt(tv_pts2.getText().toString())+1)+"");
-                figurinhas[cartasMostradas.get(0)].setColorFilter(getResources().getColor(R.color.yellow));
-                figurinhas[cartasMostradas.get(1)].setColorFilter(getResources().getColor(R.color.yellow));
             }
-            cartasMostradas.clear();
             //teste se já acharam todas as cartas
             if(botoesNaoAchados.size()==0){
                 //empate
@@ -95,9 +89,18 @@ public class MainActivity extends AppCompatActivity {
                     alertaVenceu.show();
                 }
             }
-            return true;
+        }else {
+            jogador++;
+            final Handler handler = new Handler(Looper.getMainLooper());
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    desvirarCarta(i1, i2);
+                    ativaBotoesNaoAchados();
+                }
+            }, 1500);
         }
-        return false;
+        Toast t = Toast.makeText(getApplicationContext(), "vez de " + ((jogador%2==1)?tv_jogador1.getText():tv_jogador2.getText()), Toast.LENGTH_SHORT); t.show();
     }
 
     public void virarCartas() {
@@ -107,34 +110,24 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     figurinhas[finalI].setImageResource(botoes[finalI].getFace2());
-                    cartasMostradas.add(finalI);
-                    //previne o clique na mesma carta
                     figurinhas[finalI].setClickable(false);
                     figurinhas[finalI].setEnabled(false);
-                   if(cartasMostradas.size()==2){
-                       jogador++;
-                       desativaBotoes();
-                       if(!saoIguais(botoes[cartasMostradas.get(1)], botoes[cartasMostradas.get(0)], jogador%2)){
-                           final Handler handler = new Handler(Looper.getMainLooper());
-                           handler.postDelayed(new Runnable() {
-                               @Override
-                               public void run() {
-                                   desvirarCarta();
-                               }
-                           }, 1500);
-                       }
+                    indiceTempCartasMostradas.add(finalI);
 
+                   if(indiceTempCartasMostradas.size()==2){
+                       //Toast t = Toast.makeText(getApplicationContext(), "Jogador  " + jogador%2, Toast.LENGTH_SHORT); t.show();
+                       desativaBotoes();
+                       saoIguais(indiceTempCartasMostradas.get(0), indiceTempCartasMostradas.get(1), jogador%2);
                    }
                 }
-            });
+                });
+            }
         }
-    }
     private void concatenar(){
         tv_jogador1 = findViewById(R.id.tv_jogador1);
         tv_pts1 = findViewById(R.id.tv_pts1);
         tv_jogador2 = findViewById(R.id.tv_jogador2);
         tv_pts2 = findViewById(R.id.tv_pts2);
-        //tv_jogadorAtual = findViewById(R.id.tv_jogadorAtual);
 
         this.figurinhas[0] = findViewById(R.id.figurinha0);
         this.figurinhas[1] = findViewById(R.id.figurinha1);
@@ -160,18 +153,16 @@ public class MainActivity extends AppCompatActivity {
         this.figurinhas[21] = findViewById(R.id.figurinha21);
         this.figurinhas[22] = findViewById(R.id.figurinha22);
         this.figurinhas[23] = findViewById(R.id.figurinha23);
-        this.desativaBotoes();
-        this.inicializaListaBotoes();
     }
 
     public void desativaBotoes(){
         for (int i = 0; i < 24; i++) {
-            this.figurinhas[i].setClickable(false);
-            this.figurinhas[i].setEnabled(false);
+            figurinhas[i].setClickable(false);
+            figurinhas[i].setEnabled(false);
         }
     }
 
-    public void inicializaListaBotoes(){
+    public void inicializaListaBotoesNaoAchados(){
         for (int i = 0; i < 24; i++) {
             botoesNaoAchados.add(figurinhas[i]);
         }
@@ -181,14 +172,6 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < botoesNaoAchados.size();i++){
             botoesNaoAchados.get(i).setEnabled(true);
             botoesNaoAchados.get(i).setClickable(true);
-        }
-    }
-
-    public void ativaBotoes(){
-        for (int i = 0; i < 24; i++) {
-            this.figurinhas[i].setEnabled(true);
-            this.figurinhas[i].setClickable(true);
-
         }
     }
 
@@ -204,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                 final EditText editText2 = new EditText(this);
                 AlertDialog.Builder secondPlayer = new AlertDialog.Builder(this);
                 secondPlayer.setMessage("Nome do jogador 2 (amarelo):");
-                //secondPlayer.setTitle("J2");
                 secondPlayer.setView(editText2);
                 secondPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -218,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
                 final EditText editText1 = new EditText(this);
                 AlertDialog.Builder firstPlayer = new AlertDialog.Builder(this);
-                firstPlayer.setMessage("Nome do jogador 1 (Verde):");
+                firstPlayer.setMessage("Nome do jogador 1 (verde):");
                 // firstPlayer.setTitle("J1");
                 firstPlayer.setView(editText1);
                 firstPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -226,14 +208,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String jogador1 = editText1.getText().toString();
                         tv_jogador1.setText(jogador1 + "");
-                        //tv_jogadorAtual.setText("Vez de "+ jogador1);
-                        //Toast toast = Toast.makeText(getApplicationContext(), "Vez de " + jogador1 +"\n", Toast.LENGTH_LONG); toast.show();
-
                     }
                 });
                 firstPlayer.create();
                 firstPlayer.show();
-                //Toast.makeText(getApplicationContext(), "inicializa novo jogo", Toast.LENGTH_LONG).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -248,12 +226,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void reinicializar(){
-        this.ativaBotoes();
+        inicializaListaBotoesNaoAchados();
+        ativaBotoesNaoAchados();
         controle.popularlista();
         definirCartaBotoes();
         descolorir();
         tv_pts1.setText("0");
         tv_pts2.setText("0");
+        jogador =1;
     }
 
     private void descolorir() {
