@@ -3,13 +3,18 @@ package br.com.pontes.jogodamemria;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -178,11 +183,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void mostrarOrientacoes(View view){
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle("Orientações aos jogadores");
+        String str = "";
+    }
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
             case R.id.comecarJogo:
                 this.reinicializar();
                 final EditText editText2 = new EditText(this);
+                editText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(editText2, InputMethodManager.SHOW_IMPLICIT);
                 AlertDialog.Builder secondPlayer = new AlertDialog.Builder(this);
                 secondPlayer.setMessage("Nome do jogador 2 (amarelo):");
                 secondPlayer.setView(editText2);
@@ -197,6 +211,8 @@ public class MainActivity extends AppCompatActivity {
                 secondPlayer.show();
 
                 final EditText editText1 = new EditText(this);
+                editText1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+                imm.showSoftInput(editText2, InputMethodManager.SHOW_IMPLICIT);
                 AlertDialog.Builder firstPlayer = new AlertDialog.Builder(this);
                 firstPlayer.setMessage("Nome do jogador 1 (verde):");
                 // firstPlayer.setTitle("J1");

@@ -11,12 +11,14 @@
         android:id="@+id/tv_pts2"
         android:layout_width="30dp"
         android:layout_height="33dp"
+        android:layout_marginBottom="14dp"
         android:text="0"
-        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textColor="@color/br_yellow"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_jogador2"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv"
         app:layout_constraintTop_toBottomOf="@+id/figurinha22" />
 
@@ -24,12 +26,14 @@
         android:id="@+id/tv_pts1"
         android:layout_width="32dp"
         android:layout_height="31dp"
+        android:layout_marginBottom="14dp"
         android:text="0"
-        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textColor="@color/br_green"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv"
-        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_jogador1"
         app:layout_constraintTop_toBottomOf="@+id/figurinha21" />
 
@@ -37,24 +41,30 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
         android:text="X"
         android:textColor="#000000"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_jogador2"
-        app:layout_constraintStart_toEndOf="@+id/tv_jogador1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pts2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pts1"
         app:layout_constraintTop_toBottomOf="@+id/figurinha22" />
 
     <TextView
         android:id="@+id/tv_jogador2"
-        android:layout_width="88dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
         android:text="Jogador 2"
-        android:textColor="#000000"
+        android:textAlignment="textStart"
+        android:textColor="@color/br_yellow"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pts2"
         app:layout_constraintTop_toBottomOf="@+id/figurinha23" />
 
     <ImageButton
@@ -329,13 +339,17 @@
 
     <TextView
         android:id="@+id/tv_jogador1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="14dp"
         android:text="Jogador 1"
-        android:textColor="#000000"
+        android:textAlignment="textEnd"
+        android:textColor="@color/br_green"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pts1"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/figurinha20" />
 
