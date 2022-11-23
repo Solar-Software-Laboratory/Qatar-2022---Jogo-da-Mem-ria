@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#8036F314</color>
     <color name="yellow">#80FFFF08</color>
-    <color name="br_green">#009C3B</color>
-    <color name="br_yellow">#FFDF00</color>
+    <color name="br_green">#80009C3B</color>
+    <color name="br_yellow">#80FFDF00</color>
+    <color name="br_green100">#009C3B</color>
+    <color name="br_yellow100">#FFDF00</color>
 </resources>

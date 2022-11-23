@@ -10,11 +10,13 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -72,22 +74,76 @@ public class MainActivity extends AppCompatActivity {
                 if ((Integer.parseInt(tv_pts1.getText().toString())) == (Integer.parseInt(tv_pts2.getText().toString()))){
                     AlertDialog.Builder empate = new AlertDialog.Builder(this);
                     empate.setTitle("Empate !");
+                    empate.setIcon(R.drawable.copa);
                     empate.setMessage("ambos os jogadonhes garanham... ou perderam, depende do ponto de vista");
-                    empate.setPositiveButton("OK", null);
+                    empate.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovamente();
+                        }
+                    });
+                    empate.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovosJogadores();
+                        }
+                    });
+                    empate.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            sairJogo();
+                        }
+                    });
                     empate.create();
                     empate.show();
                 }else if((Integer.parseInt(tv_pts1.getText().toString())) > (Integer.parseInt(tv_pts2.getText().toString()))){
                     AlertDialog.Builder alertaVenceu = new AlertDialog.Builder(this);
                     alertaVenceu.setTitle("Vitória !!");
+                    alertaVenceu.setIcon(R.drawable.copa);
                     alertaVenceu.setMessage("O jogador " + tv_jogador1.getText() + " venceu!");
-                    alertaVenceu.setPositiveButton("OK", null);
+                    alertaVenceu.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovamente();
+                        }
+                    });
+                    alertaVenceu.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovosJogadores();
+                        }
+                    });
+                    alertaVenceu.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            sairJogo();
+                        }
+                    });
                     alertaVenceu.create();
                     alertaVenceu.show();
                 }else{
                     AlertDialog.Builder alertaVenceu = new AlertDialog.Builder(this);
                     alertaVenceu.setTitle("Vitória !!");
+                    alertaVenceu.setIcon(R.drawable.copa);
                     alertaVenceu.setMessage("O jogador " + tv_jogador2.getText() + " venceu!");
-                    alertaVenceu.setPositiveButton("OK", null);
+                    alertaVenceu.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovamente();
+                        }
+                    });
+                    alertaVenceu.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            jogarNovamente();
+                        }
+                    });
+                    alertaVenceu.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            sairJogo();
+                        }
+                    });
                     alertaVenceu.create();
                     alertaVenceu.show();
                 }
@@ -189,43 +245,56 @@ public class MainActivity extends AppCompatActivity {
         String str = "";
     }
 
+    public void jogarNovamente(){
+        this.reinicializar();
+    }
+    public void jogarNovosJogadores(){
+        this.reinicializar();
+        final EditText editText2 = new EditText(this);
+        editText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+        editText2.setFilters(new InputFilter[] {new InputFilter.LengthFilter(9)});
+        AlertDialog.Builder secondPlayer = new AlertDialog.Builder(this);
+        secondPlayer.setMessage("Nome do jogador 2 (amarelo):");
+        secondPlayer.setView(editText2);
+        secondPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String jogador2 = editText2.getText().toString();
+                if(!jogador2.isEmpty()){
+                    tv_jogador2.setText(jogador2 + "");
+                }
+            }
+        });
+        secondPlayer.create();
+        secondPlayer.show();
+
+        final EditText editText1 = new EditText(this);
+        editText1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+        editText1.setFilters(new InputFilter[] {new InputFilter.LengthFilter(8)});
+        AlertDialog.Builder firstPlayer = new AlertDialog.Builder(this);
+        firstPlayer.setMessage("Nome do jogador 1 (verde):");
+        // firstPlayer.setTitle("J1");
+        firstPlayer.setView(editText1);
+        firstPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String jogador1 = editText1.getText().toString();
+                if(!jogador1.isEmpty()){
+                    tv_jogador1.setText(jogador1 + "");
+                }
+            }
+        });
+        firstPlayer.create();
+        firstPlayer.show();
+    }
+
+    public void sairJogo(){
+        System.exit(0);
+    }
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
             case R.id.comecarJogo:
-                this.reinicializar();
-                final EditText editText2 = new EditText(this);
-                editText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.showSoftInput(editText2, InputMethodManager.SHOW_IMPLICIT);
-                AlertDialog.Builder secondPlayer = new AlertDialog.Builder(this);
-                secondPlayer.setMessage("Nome do jogador 2 (amarelo):");
-                secondPlayer.setView(editText2);
-                secondPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String jogador2 = editText2.getText().toString();
-                        tv_jogador2.setText(jogador2 + "");
-                    }
-                });
-                secondPlayer.create();
-                secondPlayer.show();
-
-                final EditText editText1 = new EditText(this);
-                editText1.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
-                imm.showSoftInput(editText2, InputMethodManager.SHOW_IMPLICIT);
-                AlertDialog.Builder firstPlayer = new AlertDialog.Builder(this);
-                firstPlayer.setMessage("Nome do jogador 1 (verde):");
-                // firstPlayer.setTitle("J1");
-                firstPlayer.setView(editText1);
-                firstPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String jogador1 = editText1.getText().toString();
-                        tv_jogador1.setText(jogador1 + "");
-                    }
-                });
-                firstPlayer.create();
-                firstPlayer.show();
+                jogarNovosJogadores();
                 break;
         }
         return super.onOptionsItemSelected(item);
