@@ -298,10 +298,11 @@
 
         <TextView
             android:id="@+id/tv_jogador1"
-            android:layout_width="wrap_content"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Jogador 1"
+            android:textColor="#4CAF50"
             android:textSize="24sp" />
 
         <TextView
@@ -311,6 +312,7 @@
             android:layout_weight="1"
             android:text="00"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
         <TextView
@@ -320,14 +322,16 @@
             android:layout_weight="1"
             android:text="00"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_jogador2"
-            android:layout_width="wrap_content"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Jogador 2"
+            android:textColor="#FFEB3B"
             android:textSize="24sp" />
 
         <TextView
