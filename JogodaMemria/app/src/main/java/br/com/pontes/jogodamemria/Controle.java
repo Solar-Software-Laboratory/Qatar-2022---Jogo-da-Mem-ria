@@ -18,7 +18,7 @@ public class Controle {
         this.listaCartasTemporarias.add(new Carta(R.drawable.messi));
         this.listaCartasTemporarias.add(new Carta(R.drawable.modric));
         this.listaCartasTemporarias.add(new Carta(R.drawable.neymar));
-        this.listaCartasTemporarias.add(new Carta(R.drawable.sadio_mane));
+        this.listaCartasTemporarias.add(new Carta(R.drawable.ochoa));
         this.listaCartasTemporarias.add(new Carta(R.drawable.son));
         this.listaCartasTemporarias.add(new Carta(R.drawable.vinicius_jr));
         this.listaCartasTemporarias.add(new Carta(R.drawable.alisson));
@@ -30,7 +30,7 @@ public class Controle {
         this.listaCartasTemporarias.add(new Carta(R.drawable.messi));
         this.listaCartasTemporarias.add(new Carta(R.drawable.modric));
         this.listaCartasTemporarias.add(new Carta(R.drawable.neymar));
-        this.listaCartasTemporarias.add(new Carta(R.drawable.sadio_mane));
+        this.listaCartasTemporarias.add(new Carta(R.drawable.ochoa));
         this.listaCartasTemporarias.add(new Carta(R.drawable.son));
         this.listaCartasTemporarias.add(new Carta(R.drawable.vinicius_jr));
     }
