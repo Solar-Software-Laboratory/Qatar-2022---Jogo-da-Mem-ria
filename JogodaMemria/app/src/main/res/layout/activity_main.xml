@@ -293,6 +293,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="J"
+            android:textAlignment="center"
             android:textSize="24sp" />
 
         <TextView
@@ -305,18 +306,20 @@
 
         <TextView
             android:id="@+id/tv_pts1"
-            android:layout_width="wrap_content"
+            android:layout_width="17dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="00"
+            android:textAlignment="center"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_pts2"
-            android:layout_width="wrap_content"
+            android:layout_width="16dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="00"
+            android:textAlignment="center"
             android:textSize="24sp" />
 
         <TextView
@@ -333,6 +336,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="J"
+            android:textAlignment="center"
             android:textSize="24sp" />
     </LinearLayout>
 
