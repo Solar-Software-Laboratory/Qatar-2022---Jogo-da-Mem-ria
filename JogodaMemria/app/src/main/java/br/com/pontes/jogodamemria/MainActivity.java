@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,8 +13,6 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -36,14 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_pts1;
     private TextView tv_pts2;
     private byte jogador;
+    private TextView tv_flJ1;
+    private TextView tv_flJ2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.concatenar();
+        mostrarOrientacoes();
         this.virarCartas();
-        this.desativaBotoes();
+        this.desativarBotoes();
     }
 
     public void desvirarCarta(int i1, int i2){
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         indiceTempCartasMostradas.clear();
     }
 
-    public void saoIguais(int i1, int i2, int j){
+    public void verificarIgualdade(int i1, int i2, int j){
         //compara se são iguais
         if((botoes[i1].getFace2() == botoes[i2] .getFace2()) ){
             botoesNaoAchados.remove(figurinhas[i1]);
@@ -69,85 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 tv_pts2.setText((Integer.parseInt(tv_pts2.getText().toString())+1)+"");
             }
             //teste se já acharam todas as cartas
-            if(botoesNaoAchados.size()==0){
-                //empate
-                if ((Integer.parseInt(tv_pts1.getText().toString())) == (Integer.parseInt(tv_pts2.getText().toString()))){
-                    AlertDialog.Builder empate = new AlertDialog.Builder(this);
-                    empate.setTitle("Empate !");
-                    empate.setIcon(R.drawable.copa);
-                    empate.setMessage("ambos os jogadonhes garanham... ou perderam, depende do ponto de vista");
-                    empate.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovamente();
-                        }
-                    });
-                    empate.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovosJogadores();
-                        }
-                    });
-                    empate.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            sairJogo();
-                        }
-                    });
-                    empate.create();
-                    empate.show();
-                }else if((Integer.parseInt(tv_pts1.getText().toString())) > (Integer.parseInt(tv_pts2.getText().toString()))){
-                    AlertDialog.Builder alertaVenceu = new AlertDialog.Builder(this);
-                    alertaVenceu.setTitle("Vitória !!");
-                    alertaVenceu.setIcon(R.drawable.copa);
-                    alertaVenceu.setMessage("O jogador " + tv_jogador1.getText() + " venceu!");
-                    alertaVenceu.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovamente();
-                        }
-                    });
-                    alertaVenceu.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovosJogadores();
-                        }
-                    });
-                    alertaVenceu.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            sairJogo();
-                        }
-                    });
-                    alertaVenceu.create();
-                    alertaVenceu.show();
-                }else{
-                    AlertDialog.Builder alertaVenceu = new AlertDialog.Builder(this);
-                    alertaVenceu.setTitle("Vitória !!");
-                    alertaVenceu.setIcon(R.drawable.copa);
-                    alertaVenceu.setMessage("O jogador " + tv_jogador2.getText() + " venceu!");
-                    alertaVenceu.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovamente();
-                        }
-                    });
-                    alertaVenceu.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            jogarNovamente();
-                        }
-                    });
-                    alertaVenceu.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            sairJogo();
-                        }
-                    });
-                    alertaVenceu.create();
-                    alertaVenceu.show();
-                }
-            }
+            this.verificarTermino();
         }else {
             jogador++;
             final Handler handler = new Handler(Looper.getMainLooper());
@@ -159,9 +80,48 @@ public class MainActivity extends AppCompatActivity {
                 }
             }, 1500);
         }
-        Toast t = Toast.makeText(getApplicationContext(), "vez de " + ((jogador%2==1)?tv_jogador1.getText():tv_jogador2.getText()), Toast.LENGTH_SHORT); t.show();
+        Toast t = Toast.makeText(getApplicationContext(), "VEZ DE " + ((jogador%2==1)?tv_jogador1.getText():tv_jogador2.getText()), Toast.LENGTH_SHORT); t.show();
+    }
+    public void verificarTermino(){
+        if(botoesNaoAchados.size()==0){
+            //empate
+            if ((Integer.parseInt(tv_pts1.getText().toString())) == (Integer.parseInt(tv_pts2.getText().toString()))){
+                gerarAlertDialogResultado("Empate", "Ambos acertaram a mesma quantidade de cartas");
+            }else if((Integer.parseInt(tv_pts1.getText().toString())) > (Integer.parseInt(tv_pts2.getText().toString()))){
+                this.gerarAlertDialogResultado("Vitória", "O jogador " + tv_jogador1.getText() + " venceu!");
+
+            }else{
+                this.gerarAlertDialogResultado("Vitória", "O jogador " + tv_jogador2.getText() + " venceu!");
+            }
+        }
     }
 
+
+    public void gerarAlertDialogResultado(String titulo, String mensagem){
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setTitle(titulo + "!");
+        adb.setIcon(R.drawable.copa);
+        adb.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                jogarNovamente();
+            }
+        });
+        adb.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                jogarNovosJogadores();
+            }
+        });
+        adb.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                sairJogo();
+            }
+        });
+        adb.create();
+        adb.show();
+    }
     public void virarCartas() {
         for (int i = 0; i < 24; i ++) {
             int finalI = i;
@@ -174,9 +134,8 @@ public class MainActivity extends AppCompatActivity {
                     indiceTempCartasMostradas.add(finalI);
 
                    if(indiceTempCartasMostradas.size()==2){
-                       //Toast t = Toast.makeText(getApplicationContext(), "Jogador  " + jogador%2, Toast.LENGTH_SHORT); t.show();
-                       desativaBotoes();
-                       saoIguais(indiceTempCartasMostradas.get(0), indiceTempCartasMostradas.get(1), jogador%2);
+                       desativarBotoes();
+                       verificarIgualdade(indiceTempCartasMostradas.get(0), indiceTempCartasMostradas.get(1), jogador%2);
                    }
                 }
                 });
@@ -187,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
         tv_pts1 = findViewById(R.id.tv_pts1);
         tv_jogador2 = findViewById(R.id.tv_jogador2);
         tv_pts2 = findViewById(R.id.tv_pts2);
+        tv_flJ1 = findViewById(R.id.tv_flJ1);
+        tv_flJ2 = findViewById(R.id.tv_flJ2);
 
         this.figurinhas[0] = findViewById(R.id.figurinha0);
         this.figurinhas[1] = findViewById(R.id.figurinha1);
@@ -214,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         this.figurinhas[23] = findViewById(R.id.figurinha23);
     }
 
-    public void desativaBotoes(){
+    public void desativarBotoes(){
         for (int i = 0; i < 24; i++) {
             figurinhas[i].setClickable(false);
             figurinhas[i].setEnabled(false);
@@ -239,10 +200,29 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void mostrarOrientacoes(View view){
+    public void mostrarOrientacoes(){
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setTitle("Orientações aos jogadores");
-        String str = "";
+        /*String str = "1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n" +
+                "2. Ele deve ser jogado entre dois jogadores, verde e amarelo.\n\n" +
+                "3. O jogador verde sempre começa a partida.\n\n" +
+                "4. Clique no botão JOGAR para iniciar uma partida ou em SAIR para encerrar o jogo.\n\n";*/
+        adb.setMessage(R.string.str_orientacoes);
+        adb.setCancelable(false);
+        adb.setPositiveButton("JOGAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                jogarNovosJogadores();
+            }
+        });
+        adb.setNegativeButton("SAIR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                sairJogo();
+            }
+        });
+        adb.create();
+        adb.show();
     }
 
     public void jogarNovamente(){
@@ -254,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
         editText2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
         editText2.setFilters(new InputFilter[] {new InputFilter.LengthFilter(9)});
         AlertDialog.Builder secondPlayer = new AlertDialog.Builder(this);
+        secondPlayer.setCancelable(false);
         secondPlayer.setMessage("Nome do jogador 2 (amarelo):");
         secondPlayer.setView(editText2);
         secondPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -262,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
                 String jogador2 = editText2.getText().toString();
                 if(!jogador2.isEmpty()){
                     tv_jogador2.setText(jogador2 + "");
+                    tv_flJ2.setText(String.valueOf(jogador2.charAt(0)));
                 }
             }
         });
@@ -273,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
         editText1.setFilters(new InputFilter[] {new InputFilter.LengthFilter(8)});
         AlertDialog.Builder firstPlayer = new AlertDialog.Builder(this);
         firstPlayer.setMessage("Nome do jogador 1 (verde):");
+        firstPlayer.setCancelable(false);
         // firstPlayer.setTitle("J1");
         firstPlayer.setView(editText1);
         firstPlayer.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -281,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 String jogador1 = editText1.getText().toString();
                 if(!jogador1.isEmpty()){
                     tv_jogador1.setText(jogador1 + "");
+                    tv_flJ1.setText(String.valueOf(jogador1.charAt(0)));
                 }
             }
         });
@@ -293,8 +277,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
-            case R.id.comecarJogo:
-                jogarNovosJogadores();
+            case R.id.item_sobre:
+                //chamar uma view que mostre os dados do aplicativo e dos desenvolvedores
                 break;
         }
         return super.onOptionsItemSelected(item);
