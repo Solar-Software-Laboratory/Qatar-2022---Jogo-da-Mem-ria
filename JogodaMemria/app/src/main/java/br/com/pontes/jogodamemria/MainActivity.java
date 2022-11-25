@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -40,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.concatenar();
-        mostrarOrientacoes();
+        //mostrarOrientacoes();
         this.virarCartas();
         this.desativarBotoes();
+        jogarNovosJogadores();
     }
 
     public void desvirarCarta(int i1, int i2){
@@ -200,13 +202,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void mostrarOrientacoes(){
+/*    public void mostrarOrientacoes(){
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setTitle("Orientações aos jogadores");
-        /*String str = "1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n" +
+        *//*String str = "1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n" +
                 "2. Ele deve ser jogado entre dois jogadores, verde e amarelo.\n\n" +
                 "3. O jogador verde sempre começa a partida.\n\n" +
-                "4. Clique no botão JOGAR para iniciar uma partida ou em SAIR para encerrar o jogo.\n\n";*/
+                "4. Clique no botão JOGAR para iniciar uma partida ou em SAIR para encerrar o jogo.\n\n";*//*
         adb.setMessage(R.string.str_orientacoes);
         adb.setCancelable(false);
         adb.setPositiveButton("JOGAR", new DialogInterface.OnClickListener() {
@@ -223,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         });
         adb.create();
         adb.show();
-    }
+    }*/
 
     public void jogarNovamente(){
         this.reinicializar();
@@ -278,7 +280,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
             case R.id.item_sobre:
-                //chamar uma view que mostre os dados do aplicativo e dos desenvolvedores
+                Intent intent = new Intent(this, sobreActivity.class);
+                //onDestroy();
+                //finish();
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
