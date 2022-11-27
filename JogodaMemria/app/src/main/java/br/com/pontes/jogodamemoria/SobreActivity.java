@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class sobreActivity extends AppCompatActivity {
+public class SobreActivity extends AppCompatActivity {
 
     TextView tv_m_vinicius;
     TextView tv_m_vitor;
@@ -14,11 +15,13 @@ public class sobreActivity extends AppCompatActivity {
     TextView tv_jonas;
     TextView tv_projeto;
     TextView tv_linguagem;
+    private  ImageView iv_marcosVinicius;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sobre);
+        iv_marcosVinicius = findViewById(R.id.iv_marcos_vinicius);
         tv_m_vinicius = findViewById(R.id.tv_m_vinicius);
         tv_m_vitor = findViewById(R.id.tv_m_vitor);
         tv_alonso = findViewById(R.id.tv_alonso);

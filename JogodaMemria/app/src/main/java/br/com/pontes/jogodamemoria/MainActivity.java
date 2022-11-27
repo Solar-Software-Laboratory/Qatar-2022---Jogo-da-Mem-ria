@@ -280,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()){
             case R.id.item_sobre:
-                Intent intent = new Intent(this, sobreActivity.class);
+                Intent intent = new Intent(this, SobreActivity.class);
                 //onDestroy();
                 //finish();
                 startActivity(intent);
