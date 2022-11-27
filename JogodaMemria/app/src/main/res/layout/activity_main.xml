@@ -21,7 +21,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha22"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha20"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha17" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha17"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha22"
@@ -34,7 +37,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha23"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha21"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha18" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha18"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha20"
@@ -47,7 +53,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha21"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha16" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha16"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha23"
@@ -61,7 +70,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha22"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha19" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha19"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha17"
@@ -73,7 +85,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha18"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha16"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha13" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha13"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha16"
@@ -85,7 +100,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha17"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha12" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha12"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha19"
@@ -98,7 +116,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha18"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha15" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha15"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha18"
@@ -110,7 +131,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha19"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha17"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha14" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha14"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha13"
@@ -122,7 +146,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha14"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha12"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha9" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha9"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha14"
@@ -134,7 +161,9 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha15"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha13"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha10" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha10" android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha15"
@@ -147,7 +176,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha14"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha11" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha11"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha12"
@@ -159,7 +191,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha13"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha8" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha8"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha9"
@@ -171,7 +206,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha10"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha8"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha5" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha5"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha10"
@@ -183,7 +221,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha11"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha9"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha6" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha6"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha8"
@@ -195,7 +236,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha9"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha4" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha4"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha11"
@@ -208,7 +252,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha10"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha7" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha7"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha5"
@@ -220,7 +267,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha4"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha1" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha1"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha4"
@@ -232,7 +282,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha0" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha0"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha6"
@@ -244,7 +297,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha5"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha2" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha2"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha7"
@@ -257,7 +313,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha6"
-        app:layout_constraintTop_toBottomOf="@+id/figurinha3" />
+        app:layout_constraintTop_toBottomOf="@+id/figurinha3"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha3"
@@ -270,7 +329,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha0"
@@ -282,7 +344,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha1"
@@ -294,7 +359,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha0"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <ImageButton
         android:id="@+id/figurinha2"
@@ -306,7 +374,10 @@
         app:layout_constraintEnd_toStartOf="@+id/figurinha3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/figurinha1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="false"/>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -345,6 +416,7 @@
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:includeFontPadding="false"
             android:text="00"
             android:textAlignment="center"
             android:textColor="#FFFFFF"

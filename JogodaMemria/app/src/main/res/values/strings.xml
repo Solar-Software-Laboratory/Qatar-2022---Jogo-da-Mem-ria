@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jogo da Memória</string>
+    <string name="app_name">Qatar 2022 - Memory Game</string>
     <string name="str_orientacoes">1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n
 2. Ele deve ser jogado entre dois oponentes, verde e amarelo.\n\n
 3. O jogador verde sempre começa a partida.\n\n
@@ -14,8 +14,8 @@ em qual linguagem foi desenvolvido\n
     </string>
     <string name="str_m_vinicius"><a href="https://github.com/MarcosVini753">Marcos Vinícius </a></string>
     <string name="str_m_vitor"><a href="https://github.com/MarcosVitor2005"> Marcos Vitor </a></string>
-    <string name="str_alonso"><a href="http://www.google.com">Alonso Martins </a></string>
-    <string name="str_jonas"><a href="http://www.google.com">Orientador - Jonas Pontes </a></string>
-    <string name="str_projeto"><a href="http://www.google.com">Enderenço do Projeto </a></string>
-    <string name="srt_linguagem"><a href="http://www.google.com">Linguagem utilizada </a></string>
+    <string name="str_alonso"><a href="https://github.com/AlonsoMCDG">Alonso Martins </a></string>
+    <string name="str_jonas"><a href="https://www.instagram.com/jn.pontes/">Orientador - Jonas Pontes </a></string>
+    <string name="str_projeto"><a href="https://github.com/MonitoresIFAC2022/Jogo_da_Memoria">Enderenço do Projeto </a></string>
+    <string name="srt_linguagem"><a href="https://www.oracle.com/br/java/">Linguagem utilizada </a></string>
 </resources>
