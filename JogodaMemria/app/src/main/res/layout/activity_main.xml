@@ -406,41 +406,49 @@
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
             android:text="JOGADOR 1"
             android:textAlignment="textEnd"
             android:textColor="#4CAF50"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_pts1"
             android:layout_width="15dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
             android:includeFontPadding="false"
             android:text="00"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_pts2"
             android:layout_width="14dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
             android:text="00"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_jogador2"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
             android:text="JOGADOR 2"
             android:textAlignment="textStart"
             android:textColor="#FFEB3B"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_flJ2"
