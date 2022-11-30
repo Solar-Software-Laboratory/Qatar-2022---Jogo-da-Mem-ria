@@ -5,17 +5,12 @@
 3. O jogador verde sempre começa a partida.\n\n
 4. Clique no botão JOGAR para iniciar uma partida.\n
     </string>
-    <string name="informacoes">Marcos Vinícius\n
-Marcos Vitor\n
-Alonso Martins\n
-Orientador - Jonas Pontes\n
-endereço do projeto\n
-em qual linguagem foi desenvolvido\n
-    </string>
-    <string name="str_m_vinicius"><a href="https://github.com/MarcosVini753">Marcos Vinícius </a></string>
-    <string name="str_m_vitor"><a href="https://github.com/MarcosVitor2005"> Marcos Vitor </a></string>
-    <string name="str_alonso"><a href="https://github.com/AlonsoMCDG">Alonso Martins </a></string>
-    <string name="str_jonas"><a href="https://www.instagram.com/jn.pontes/">Orientador - Jonas Pontes </a></string>
+
+    <string name="str_m_vinicius"><a href="https://github.com/MarcosVini753">Marcos Vinícius</a></string>
+    <string name="str_m_vitor"><a href="https://github.com/MarcosVitor2005">Marcos Vitor   </a></string>
+    <string name="str_alonso"><a href="https://github.com/AlonsoMCDG">Alonso Martins          </a></string>
+    <string name="str_jonas"><a href="https://www.instagram.com/jn.pontes/">Orientador:\nJonas Pontes</a></string>
     <string name="str_projeto"><a href="https://github.com/MonitoresIFAC2022/Jogo_da_Memoria">Enderenço do Projeto </a></string>
     <string name="srt_linguagem"><a href="https://www.oracle.com/br/java/">Linguagem utilizada </a></string>
+    <string name="srt_ide"><a href="https://developer.android.com/studio">IDE utilizada </a></string>
 </resources>

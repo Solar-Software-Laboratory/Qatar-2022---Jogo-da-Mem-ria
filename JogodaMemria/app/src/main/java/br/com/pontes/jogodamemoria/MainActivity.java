@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         this.concatenar();
         //mostrarOrientacoes();
@@ -292,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
     public void definirCartaBotoes(){
         for(int i=0; i<24; i++){
             Carta c = controle.sortear();
-            figurinhas[i].setImageResource(c.getFace1());
+            figurinhas[i].setImageResource(c.getFace2());
             botoes[i] = c;
             controle.setVetorCartas(c, i);
         }

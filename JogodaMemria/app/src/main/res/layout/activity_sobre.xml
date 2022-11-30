@@ -7,84 +7,138 @@
     android:background="@drawable/sobre_app"
     tools:context=".SobreActivity">
 
-    <TextView
-        android:id="@+id/tv_linguagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/srt_linguagem"
-        android:textColor="#141414"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_projeto" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Informações"
-        android:textColor="#0E0E0E"
-        android:textSize="28sp"
+    <LinearLayout
+        android:id="@+id/ly_linguagem"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_jonas" />
+        app:layout_constraintTop_toBottomOf="@+id/ly_projeto">
+
+        <ImageView
+            android:id="@+id/iv_linguagem"
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://www.oracle.com/br/java/"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/java" />
+
+        <TextView
+            android:id="@+id/tv_linguagem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:text="@string/srt_linguagem"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_projeto"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/iv_projeto"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://github.com/MonitoresIFAC2022/Jogo_da_Memoria"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/github" />
+
+        <TextView
+            android:id="@+id/tv_projeto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:text="@string/str_projeto"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_ide"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_linguagem">
+
+        <ImageView
+            android:id="@+id/iv_ide"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://developer.android.com/studio"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/asi" />
+
+        <TextView
+            android:id="@+id/tv_ide"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:text="@string/srt_ide"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
 
     <TextView
-        android:id="@+id/tv_jonas"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/str_jonas"
-        android:textColor="#141414"
-        android:textSize="20sp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="452dp"
+        android:fontFamily="@font/inconsolata"
+        android:text="Informações "
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alonso" />
-
-    <TextView
-        android:id="@+id/tv_projeto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/str_projeto"
-        android:textColor="#141414"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/tv_alonso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/str_alonso"
-        android:textColor="#141414"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_m_vitor" />
-
-    <TextView
-        android:id="@+id/tv_m_vitor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/str_m_vitor"
-        android:textColor="#141414"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_m_vinicius" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/inconsolata"
         android:text="Desenvolvedores"
         android:textColor="@color/white"
@@ -93,20 +147,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_m_vinicius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/str_m_vinicius"
-        android:textColor="#141414"
-        android:textSize="20sp"
+    <LinearLayout
+        android:id="@+id/ly_m_vinicius"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/ly_alonso">
+
+        <ImageView
+            android:id="@+id/iv_m_vinicius"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://github.com/MarcosVini753"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/github" />
+
+        <TextView
+            android:id="@+id/tv_m_vinicius"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:text="@string/str_m_vinicius"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="353dp"
+        android:id="@+id/ly_m_vitor"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_m_vinicius">
+
+        <ImageView
+            android:id="@+id/iv_m_vitor"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://github.com/MarcosVitor2005"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/github" />
+
+        <TextView
+            android:id="@+id/tv_m_vitor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:text="@string/str_m_vitor"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_alonso"
+        android:layout_width="400dp"
         android:layout_height="48dp"
         android:layout_margin="14sp"
         android:layout_marginStart="14dp"
@@ -120,22 +237,65 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <ImageView
-            android:id="@+id/iv_marcos_vinicius"
-            android:layout_width="1dp"
+            android:id="@+id/iv_alonso"
+            android:layout_width="4dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:tag="https://github.com/AlonsoMCDG"
+            android:onClick="openBrowser"
             app:srcCompat="@drawable/github" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_alonso"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/inconsolata"
             android:gravity="center_vertical"
-            android:text="Marcos Vinícius"
+            android:text="@string/str_alonso"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_jonas"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_margin="14sp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:textAlignment="textStart"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_m_vitor">
+
+        <ImageView
+            android:id="@+id/iv_m_vitor2"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="https://www.instagram.com/jn.pontes/"
+            android:onClick="openBrowser"
+            app:srcCompat="@drawable/insta" />
+
+        <TextView
+            android:id="@+id/tv_jonas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/inconsolata"
+            android:gravity="center_vertical"
+            android:textColorLink="@color/white"
+            android:textStyle="normal"
+            android:text="@string/str_jonas"
             android:textColor="@color/white"
             android:textSize="24sp" />
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
