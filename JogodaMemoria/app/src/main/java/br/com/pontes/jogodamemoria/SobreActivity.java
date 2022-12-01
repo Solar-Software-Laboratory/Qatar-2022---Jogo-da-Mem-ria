@@ -22,6 +22,14 @@ public class SobreActivity extends AppCompatActivity {
     private TextView tv_linguagem;
     private TextView tv_ide;
     private ImageView iv_marcosVinicius;
+
+
+    public void abrirTelaCartas(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        //onDestroy();
+        finish();
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

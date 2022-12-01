@@ -110,18 +110,19 @@ public class MainActivity extends AppCompatActivity {
                 jogarNovamente();
             }
         });
-        adb.setNeutralButton("Novos Jogadores", new DialogInterface.OnClickListener() {
+        adb.setNegativeButton("Novos Jogadores", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 jogarNovosJogadores();
             }
         });
-        adb.setNegativeButton("Sair", new DialogInterface.OnClickListener() {
+        adb.setNeutralButton("Fechar", null);
+       /* adb.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 sairJogo();
             }
-        });
+        });*/
         adb.create();
         adb.show();
     }
@@ -286,6 +287,9 @@ public class MainActivity extends AppCompatActivity {
                 //finish();
                 startActivity(intent);
                 break;
+            case R.id.item_novo_jogo:
+                gerarAlertDialogResultado("Novo jogo", null);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -293,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
     public void definirCartaBotoes(){
         for(int i=0; i<24; i++){
             Carta c = controle.sortear();
-            figurinhas[i].setImageResource(c.getFace2());
+            figurinhas[i].setImageResource(c.getFace1());
             botoes[i] = c;
             controle.setVetorCartas(c, i);
         }
