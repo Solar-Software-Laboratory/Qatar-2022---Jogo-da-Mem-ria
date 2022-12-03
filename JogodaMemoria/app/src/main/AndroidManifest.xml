@@ -38,7 +38,7 @@
             android:name="br.com.pontes.jogodamemoria.SobreActivity"
             android:screenOrientation="portrait"
             android:parentActivityName="br.com.pontes.jogodamemoria.MainActivity"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="@layout/activity_sobre" />

@@ -205,31 +205,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-/*    public void mostrarOrientacoes(){
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        adb.setTitle("Orientações aos jogadores");
-        *//*String str = "1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n" +
-                "2. Ele deve ser jogado entre dois jogadores, verde e amarelo.\n\n" +
-                "3. O jogador verde sempre começa a partida.\n\n" +
-                "4. Clique no botão JOGAR para iniciar uma partida ou em SAIR para encerrar o jogo.\n\n";*//*
-        adb.setMessage(R.string.str_orientacoes);
-        adb.setCancelable(false);
-        adb.setPositiveButton("JOGAR", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                jogarNovosJogadores();
-            }
-        });
-        adb.setNegativeButton("SAIR", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                sairJogo();
-            }
-        });
-        adb.create();
-        adb.show();
-    }*/
-
     public void jogarNovamente(){
         this.reinicializar();
     }
@@ -284,8 +259,6 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.item_sobre:
                 Intent intent = new Intent(this, SobreActivity.class);
-                //onDestroy();
-                //finish();
                 startActivity(intent);
                 break;
             case R.id.item_novo_jogo:
