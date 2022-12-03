@@ -87,7 +87,7 @@
             android:tag="https://www.instagram.com/jn.pontes/"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_marcos_vitor"
-            app:srcCompat="@drawable/orientador" />
+            app:srcCompat="@drawable/jonas" />
 
         <ImageView
             android:id="@+id/iv_projeto"
@@ -99,7 +99,7 @@
             android:tag="https://github.com/MonitoresIFAC2022/Jogo_da_Memoria"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/endereco" />
+            app:srcCompat="@drawable/projeto" />
 
         <ImageView
             android:id="@+id/iv_linguagem"
@@ -111,7 +111,7 @@
             android:tag="https://www.oracle.com/br/java/"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_projeto"
-            app:srcCompat="@drawable/endereco" />
+            app:srcCompat="@drawable/java" />
 
         <ImageView
             android:id="@+id/iv_ide"
@@ -123,7 +123,7 @@
             android:tag="https://developer.android.com/studio"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_linguagem"
-            app:srcCompat="@drawable/ide_ulti" />
+            app:srcCompat="@drawable/ide" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
