@@ -13,12 +13,6 @@ public class SobreActivity extends AppCompatActivity {
 
 
 
-    public void abrirTelaCartas(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        //onDestroy();
-        finish();
-        startActivity(intent);
-    }
 
 
 
@@ -41,4 +35,7 @@ public class SobreActivity extends AppCompatActivity {
         i.setData(Uri.parse(url));
         startActivity(i);
   }
+    public void voltar(View view){
+        this.finish();
+    }
 }
