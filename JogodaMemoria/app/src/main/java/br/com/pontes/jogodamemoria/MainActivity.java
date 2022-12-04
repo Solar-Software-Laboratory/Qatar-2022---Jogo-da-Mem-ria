@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setCancelable(false);
         adb.setTitle(titulo + "!");
+        adb.setMessage(mensagem);
         adb.setIcon(R.drawable.copa);
         adb.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
             @Override
