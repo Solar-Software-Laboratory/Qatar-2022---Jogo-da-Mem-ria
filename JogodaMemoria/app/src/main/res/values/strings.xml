@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Qatar 22: Memory Game</string>
+    <string name="app_name">Jogo da Memória: Copa do Mundo</string>
     <string name="str_orientacoes">1. Este jogo da memória tem como cartas 12 jogadores da Copa do Mundo de 2022.\n\n
 2. Ele deve ser jogado entre dois oponentes, verde e amarelo.\n\n
 3. O jogador verde sempre começa a partida.\n\n

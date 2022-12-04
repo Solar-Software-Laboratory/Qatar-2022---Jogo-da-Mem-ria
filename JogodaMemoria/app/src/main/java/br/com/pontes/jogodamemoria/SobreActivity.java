@@ -1,5 +1,6 @@
 package br.com.pontes.jogodamemoria;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class SobreActivity extends AppCompatActivity {
@@ -21,13 +23,21 @@ public class SobreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_sobre);
-        setTitle("Sobre o APP");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
-
+        //setTitle("Sobre o APP");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Sobre o APP");
+        actionBar.setHomeAsUpIndicator(R.drawable.backbutton);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-  public void openBrowser(View v){
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        this.finish();
+        return true;
+    }
+
+    public void openBrowser(View v){
         String url = (String)v.getTag();
         Intent i = new Intent();
         i.setAction(Intent.ACTION_VIEW);
