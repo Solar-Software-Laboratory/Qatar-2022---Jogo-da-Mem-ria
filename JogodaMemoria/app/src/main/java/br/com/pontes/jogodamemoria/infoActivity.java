@@ -21,4 +21,5 @@ public class infoActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
 }
