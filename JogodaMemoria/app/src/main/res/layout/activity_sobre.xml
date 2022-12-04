@@ -176,6 +176,18 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_linguagem"
             app:srcCompat="@drawable/ide" />
 
+        <ImageView
+            android:id="@+id/iv_gp_pesquisa"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:onClick="openBrowser"
+            android:tag="http://dgp.cnpq.br/dgp/espelhogrupo/0030069073641405"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_ide"
+            app:srcCompat="@drawable/gp_pesquisa" />
 
     </LinearLayout>
 </ScrollView>
