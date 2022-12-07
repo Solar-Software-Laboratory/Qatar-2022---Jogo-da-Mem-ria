@@ -104,7 +104,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:onClick="openBrowser"
-            android:tag="https://instagram.com/sucoacai"
+            android:tag="https://github.com/wramonbessa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_marcos_vitor"
             app:srcCompat="@drawable/bessa" />
@@ -148,7 +148,7 @@
             android:tag="https://github.com/Solar-Software-Laboratory/Qatar-2022-Jogo-da-Memoria"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_informacoes"
-            app:srcCompat="@drawable/projeto" />
+            app:srcCompat="@drawable/endereco" />
 
         <ImageView
             android:id="@+id/iv_linguagem"
@@ -174,7 +174,7 @@
             android:tag="https://developer.android.com/?hl=pt-br"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_linguagem"
-            app:srcCompat="@drawable/ide" />
+            app:srcCompat="@drawable/ide_util" />
 
         <ImageView
             android:id="@+id/iv_gp_pesquisa"

@@ -265,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.item_novo_jogo:
                 gerarAlertDialogResultado("Novo jogo", null);
+                botoesNaoAchados.clear();
+                indiceTempCartasMostradas.clear();
                 break;
         }
         return super.onOptionsItemSelected(item);
