@@ -110,12 +110,16 @@ public class MainActivity extends AppCompatActivity {
         adb.setPositiveButton("Jogar Novamente", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                botoesNaoAchados.clear();
+                indiceTempCartasMostradas.clear();
                 jogarNovamente();
             }
         });
         adb.setNegativeButton("Novos Jogadores", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                botoesNaoAchados.clear();
+                indiceTempCartasMostradas.clear();
                 jogarNovosJogadores();
             }
         });
@@ -265,8 +269,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.item_novo_jogo:
                 gerarAlertDialogResultado("Novo jogo", null);
-                botoesNaoAchados.clear();
-                indiceTempCartasMostradas.clear();
                 break;
         }
         return super.onOptionsItemSelected(item);
