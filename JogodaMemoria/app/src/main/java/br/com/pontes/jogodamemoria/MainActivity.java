@@ -24,17 +24,17 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private Controle controle = new Controle();
+    private Carta[] botoes = new Carta[24];
     private ImageButton[] figurinhas = new ImageButton[24];
     private List<ImageButton> botoesNaoAchados = new ArrayList<ImageButton>();
-    private Carta[] botoes = new Carta[24];
     private List<Integer> indiceTempCartasMostradas = new ArrayList<Integer>();
     private TextView tv_jogador1;
     private TextView tv_jogador2;
     private TextView tv_pts1;
     private TextView tv_pts2;
-    private byte jogador;
     private TextView tv_flJ1;
     private TextView tv_flJ2;
+    private byte jogador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         jogarNovosJogadores();
     }
 
+    // faz com que as cartas nos índices i1 e i2 voltem 
+    // com o drawable padrão das "costas" da carta
     public void desvirarCarta(int i1, int i2){
         figurinhas[i1].setImageResource(botoes[i1].getFace1());
         figurinhas[i2].setImageResource(botoes[i2].getFace1());
@@ -129,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
         adb.create();
         adb.show();
     }
+
+    // TODO: sugestão de mudar o nome do método
+    // para "mostrarFaceCartas"
     public void virarCartas() {
         for (int i = 0; i < 24; i ++) {
             int finalI = i;
